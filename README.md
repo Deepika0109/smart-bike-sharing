@@ -20,7 +20,7 @@ This project is a demo microservices-based application for a smart bike-sharing 
    ```
 
 2. **Test Endpoints**  
-   - **Register**: `POST http://localhost:8080/auth/register`
-   - **Station CRUD**: `GET/POST http://localhost:8080/stations`
-   - **Start Rental**: `POST http://localhost:8080/rentals/start`
-   - **Process Payment**: `POST http://localhost:8080/payments`
+   - **Register**: `POST http://localhost:9001/auth/register`
+   - **Station CRUD**: `GET/POST http://localhost:9002/stations`
+   - **Start Rental**: `POST http://localhost:9003/rentals/start`
+   - **Process Payment**: `POST http://localhost:9004/payments`
