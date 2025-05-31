@@ -1,0 +1,35 @@
+version: '3.8'
+services:
+  config-server:
+    build: ./config-server
+    ports: ["8888:8888"]
+
+  eureka-server:
+    build: ./eureka-server
+    ports: ["8761:8761"]
+    depends_on: [config-server]
+
+  api-gateway:
+    build: ./api-gateway
+    ports: ["8080:8080"]
+    depends_on: [eureka-server, config-server]
+
+  user-service:
+    build: ./user-service
+    ports: ["9001:9001"]
+    depends_on: [eureka-server, config-server]
+
+  station-service:
+    build: ./station-service
+    ports: ["9002:9002"]
+    depends_on: [eureka-server, config-server]
+
+  rental-service:
+    build: ./rental-service
+    ports: ["9003:9003"]
+    depends_on: [eureka-server, config-server]
+
+  payment-service:
+    build: ./payment-service
+    ports: ["9004:9004"]
+    depends_on: [eureka-server, config-server]
